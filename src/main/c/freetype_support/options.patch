@@ -6,7 +6,7 @@ index b315baba8..f9edb3d78 100644
   * Please read `docs/INSTALL.ANY` and `docs/CUSTOMIZE` how to compile
   * FreeType without GNU make.
   *
-+ * Copyright 2021-2024 MicroEJ Corp. This file has been modified and/or created by MicroEJ Corp.
++ * Copyright 2021-2026 MicroEJ Corp. This file has been modified and/or created by MicroEJ Corp.
 + *
 + * This file is part of the FreeType project, and may only be used,
 + * modified, and distributed under the terms of the FreeType project
@@ -66,7 +66,7 @@ index eb4e32d80..6261cf276 100644
   * Copyright (C) 1996-2024 by
   * David Turner, Robert Wilhelm, and Werner Lemberg.
   *
-+ * Copyright 2021-2024 MicroEJ Corp. This file has been modified and/or created by MicroEJ Corp.
++ * Copyright 2021-2026 MicroEJ Corp. This file has been modified and/or created by MicroEJ Corp.
 + *
   * This file is part of the FreeType project, and may only be used,
   * modified, and distributed under the terms of the FreeType project

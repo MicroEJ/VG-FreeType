@@ -1,7 +1,7 @@
 /*
  * C
  *
- * Copyright 2022-2024 MicroEJ Corp. This file has been modified and/or created by MicroEJ Corp.
+ * Copyright 2022-2026 MicroEJ Corp. This file has been modified and/or created by MicroEJ Corp.
  *
  * This file is part of the FreeType project, and may only be used,
  * modified, and distributed under the terms of the FreeType project
@@ -14,13 +14,13 @@
 * @file
 * @brief MicroEJ Freetype wrapper on freetype c files
 * @author MicroEJ Developer Team
-* @version 4.0.0
+* @version 5.0.0
 */
 
 #include "vg_configuration.h"
 #if defined (VG_FEATURE_FONT)
 
-#ifdef VG_FEATURE_FREETYPE_OTF
+#if defined VG_FEATURE_FREETYPE_OTF && (VG_FEATURE_FREETYPE_OTF == 1)
 #include "../../thirdparty/freetype/src/cff/cff.c"
 #include "../../thirdparty/freetype/src/psaux/psaux.c"
 #include "../../thirdparty/freetype/src/psnames/psnames.c"

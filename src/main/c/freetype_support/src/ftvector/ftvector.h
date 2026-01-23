@@ -1,7 +1,7 @@
 /*
  * C
  *
- * Copyright 2019-2024 MicroEJ Corp. This file has been modified and/or created by MicroEJ Corp.
+ * Copyright 2019-2026 MicroEJ Corp. This file has been modified and/or created by MicroEJ Corp.
  *
  * This file is part of the FreeType project, and may only be used,
  * modified, and distributed under the terms of the FreeType project
@@ -14,7 +14,7 @@
  * @file
  * @brief Freetype renderer
  * @author MicroEJ Developer Team
- * @version 4.0.0
+ * @version 5.0.0
  */
 
 #ifndef FTVECTOR_H

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 MicroEJ Corp. This file has been modified and/or created by MicroEJ Corp.
+ * Copyright 2024-2026 MicroEJ Corp. This file has been modified and/or created by MicroEJ Corp.
  *
  * This file is part of the FreeType project, and may only be used,
  * modified, and distributed under the terms of the FreeType project
@@ -14,7 +14,7 @@
 * update the C module MicroVG.
 *
 * @author MicroEJ Developer Team
-* @version 4.0.0
+* @version 5.0.0
 */
 
 // just make the indirection

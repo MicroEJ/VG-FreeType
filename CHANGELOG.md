@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.0.0] - 2026-01-23
+
+### Changed 
+
+- Upgrade FreeType from the version 2.13.1 (2024-08-11) to the version 2.14.1 (2025-09-11).
+- Make the C module compatible with the new option configuration of MicroVG C module 8.0.0 (requires the include directive VEE Port folder `config`).
+
 ## [4.0.0] - 2024-10-18
 
 ### Changed
@@ -28,7 +35,7 @@ This C module is compatible with the MicroVG C modules [8.0.1-9.0.0].
 
 ### Changed
 
-- Depend on the CCO MicroVG 8.0.0.
+- Depend on the C Module MicroVG 8.0.0.
 - Make the Freetype port generic for MicroVG (`ftvector.c` uses `LLVG_PATH_impl.h` API).
 - [OTF] Use Freetype heap to allocate big objects instead of allocating them on the current task stack.
 
@@ -48,17 +55,16 @@ This C module is compatible with the MicroVG C modules [8.0.1-9.0.0].
 
 ### Updated
 
-- Rework code organisation to configure the CCO from microvg_configuration.h file.
-
+- Rework code organisation to configure the C Module from microvg_configuration.h file.
 
 ## [1.0.0] - 2021-12-02
 
 ### Added
 
-- CCO creation from Freetype 2.11.0 version.
+- C Module creation from Freetype 2.11.0 version.
 
 ---
-_Copyright 2021-2024 MicroEJ Corp. This file has been modified and/or created by MicroEJ Corp._
+_Copyright 2021-2026 MicroEJ Corp. This file has been modified and/or created by MicroEJ Corp._
 
 _This file is part of the FreeType project, and may only be used,_\
 _modified, and distributed under the terms of the FreeType project_\

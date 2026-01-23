@@ -5,7 +5,7 @@
  *   ANSI-specific FreeType low-level memory interface (body).
  *   This file is a sub part of ftsystem.c
  *
- * Copyright 2021-2024 MicroEJ Corp. This file has been modified and/or created by MicroEJ Corp.
+ * Copyright 2021-2026 MicroEJ Corp. This file has been modified and/or created by MicroEJ Corp.
  *
  * This file is part of the FreeType project, and may only be used,
  * modified, and distributed under the terms of the FreeType project
