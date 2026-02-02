@@ -38,7 +38,7 @@ These files are updated thanks .patch files:
 
 Add the following line to your `module.ivy`:
 
-    <dependency org="com.microej.clibrary.thirdparty" name="freetype" rev="5.0.0"/>
+    <dependency org="com.microej.clibrary.thirdparty" name="freetype" rev="5.0.1"/>
 
 1. From `<bsp>/freetype_support/src/wrappers`, add all c files to the list of compiled files.
 2. Add these folders to your include directories list:

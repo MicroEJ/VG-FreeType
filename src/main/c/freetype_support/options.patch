@@ -32,12 +32,12 @@ index b315baba8..f9edb3d78 100644
 +FT_USE_MODULE( FT_Renderer_Class, ft_smooth_renderer_class )
 +#endif // defined (VG_FEATURE_FONT_FREETYPE_BITMAP) && (VG_FEATURE_FONT == VG_FEATURE_FONT_FREETYPE_BITMAP)
 +
-+#ifdef VG_FEATURE_FREETYPE_TTF
++#if defined VG_FEATURE_FREETYPE_TTF && (VG_FEATURE_FREETYPE_TTF == 1)
  FT_USE_MODULE( FT_Driver_ClassRec, tt_driver_class )
 -FT_USE_MODULE( FT_Driver_ClassRec, t1_driver_class )
 +#endif // VG_FEATURE_FREETYPE_TTF
 +
-+#ifdef VG_FEATURE_FREETYPE_OTF
++#if defined VG_FEATURE_FREETYPE_OTF && (VG_FEATURE_FREETYPE_OTF == 1)
  FT_USE_MODULE( FT_Driver_ClassRec, cff_driver_class )
 -FT_USE_MODULE( FT_Driver_ClassRec, t1cid_driver_class )
 -FT_USE_MODULE( FT_Driver_ClassRec, pfr_driver_class )

@@ -14,7 +14,7 @@
 * @file
 * @brief MicroEJ Freetype wrapper on freetype c files
 * @author MicroEJ Developer Team
-* @version 5.0.0
+* @version 5.0.1
 */
 
 #include "vg_configuration.h"

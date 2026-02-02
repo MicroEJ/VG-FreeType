@@ -14,7 +14,7 @@
  * @file
  * @brief Freetype microvg renderer
 * @author MicroEJ Developer Team
-* @version 5.0.0
+* @version 5.0.1
  */
 
 #include "vg_configuration.h"

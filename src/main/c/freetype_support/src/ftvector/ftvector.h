@@ -14,7 +14,7 @@
  * @file
  * @brief Freetype renderer
  * @author MicroEJ Developer Team
- * @version 5.0.0
+ * @version 5.0.1
  */
 
 #ifndef FTVECTOR_H

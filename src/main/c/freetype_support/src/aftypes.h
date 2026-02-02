@@ -14,7 +14,7 @@
 * update the C module MicroVG.
 *
 * @author MicroEJ Developer Team
-* @version 5.0.0
+* @version 5.0.1
 */
 
 // just make the indirection
