@@ -11,17 +11,17 @@
  */
 
 /**
-* @file
-* @brief MicroEJ Freetype wrapper on freetype c files
-* @author MicroEJ Developer Team
-* @version 5.0.1
-*/
+ * @file
+ * @brief MicroEJ Freetype wrapper on freetype c files
+ * @author MicroEJ Developer Team
+ * @version 5.0.4
+ */
 
 #include "vg_configuration.h"
 
-#if defined (VG_FEATURE_FONT) && defined (VG_FEATURE_FONT_FREETYPE_BITMAP) && (VG_FEATURE_FONT == VG_FEATURE_FONT_FREETYPE_BITMAP)
+#if defined(VG_FEATURE_FONT) && defined(VG_FEATURE_FONT_FREETYPE_BITMAP) && \
+	(VG_FEATURE_FONT == VG_FEATURE_FONT_FREETYPE_BITMAP)
 #include "../../thirdparty/freetype/src/smooth/ftsmooth.c"
 #include "../../thirdparty/freetype/src/smooth/ftgrays.c"
 #include "../../thirdparty/freetype/src/base/ftdebug.c"
-#endif // defined (VG_FEATURE_FONT) && defined (VG_FEATURE_FONT_FREETYPE_BITMAP) && (VG_FEATURE_FONT == VG_FEATURE_FONT_FREETYPE_BITMAP)
-
+#endif // VG_FEATURE_FONT_FREETYPE_BITMAP

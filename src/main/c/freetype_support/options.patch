@@ -1,5 +1,5 @@
 diff --git a/include/freetype/config/ftmodule.h b/include/freetype/config/ftmodule.h
-index b315baba8..f9edb3d78 100644
+index b315bab..887120a 100644
 --- a/include/freetype/config/ftmodule.h
 +++ b/include/freetype/config/ftmodule.h
 @@ -8,26 +8,41 @@
@@ -59,11 +59,11 @@ index b315baba8..f9edb3d78 100644
 +#endif // defined (VG_FEATURE_FONT)
  /* EOF */
 diff --git a/include/freetype/config/ftoption.h b/include/freetype/config/ftoption.h
-index eb4e32d80..6261cf276 100644
+index 4934186..7c07942 100644
 --- a/include/freetype/config/ftoption.h
 +++ b/include/freetype/config/ftoption.h
 @@ -7,6 +7,8 @@
-  * Copyright (C) 1996-2024 by
+  * Copyright (C) 1996-2025 by
   * David Turner, Robert Wilhelm, and Werner Lemberg.
   *
 + * Copyright 2021-2026 MicroEJ Corp. This file has been modified and/or created by MicroEJ Corp.
@@ -106,7 +106,7 @@ index eb4e32d80..6261cf276 100644
  
  
    /**************************************************************************
-@@ -348,7 +352,7 @@ FT_BEGIN_HEADER
+@@ -373,7 +377,7 @@ FT_BEGIN_HEADER
     *   in your 'psnames' module.  The Type~1 driver will not be able to
     *   synthesize a Unicode charmap out of the glyphs found in the fonts.
     */
@@ -115,7 +115,7 @@ index eb4e32d80..6261cf276 100644
  
  
    /**************************************************************************
-@@ -361,7 +365,7 @@ FT_BEGIN_HEADER
+@@ -386,7 +390,7 @@ FT_BEGIN_HEADER
     *
     *   Note that the 'FOND' resource isn't checked.
     */
@@ -124,7 +124,7 @@ index eb4e32d80..6261cf276 100644
  
  
    /**************************************************************************
-@@ -393,7 +397,7 @@ FT_BEGIN_HEADER
+@@ -418,7 +422,7 @@ FT_BEGIN_HEADER
     * incrementally as the document is parsed, such as the Ghostscript
     * interpreter for the PostScript language.
     */
@@ -133,7 +133,7 @@ index eb4e32d80..6261cf276 100644
  
  
    /**************************************************************************
-@@ -538,7 +542,7 @@ FT_BEGIN_HEADER
+@@ -563,7 +567,7 @@ FT_BEGIN_HEADER
     *
     *   More details on the hooks can be found in file `otsvg.h`.
     */
@@ -142,7 +142,7 @@ index eb4e32d80..6261cf276 100644
  
  
    /**************************************************************************
-@@ -569,7 +573,7 @@ FT_BEGIN_HEADER
+@@ -594,7 +598,7 @@ FT_BEGIN_HEADER
     * embedded bitmaps in all formats using the 'sfnt' module (namely
     * TrueType~& OpenType).
     */
@@ -151,17 +151,17 @@ index eb4e32d80..6261cf276 100644
  
  
    /**************************************************************************
-@@ -578,7 +582,9 @@ FT_BEGIN_HEADER
+@@ -603,7 +607,9 @@ FT_BEGIN_HEADER
     * outlines (from the 'COLR'/'CPAL' tables) in all formats using the 'sfnt'
     * module (namely TrueType~& OpenType).
     */
-+#ifdef VG_FEATURE_FREETYPE_COLORED_EMOJI
++#if defined VG_FEATURE_FREETYPE_COLORED_EMOJI && (VG_FEATURE_FREETYPE_COLORED_EMOJI == 1)
  #define TT_CONFIG_OPTION_COLOR_LAYERS
 +#endif
  
  
    /**************************************************************************
-@@ -607,7 +613,7 @@ FT_BEGIN_HEADER
+@@ -632,7 +638,7 @@ FT_BEGIN_HEADER
     * Accessing SFNT names is done through the functions declared in
     * `ftsnames.h`.
     */
@@ -170,7 +170,7 @@ index eb4e32d80..6261cf276 100644
  
  
    /**************************************************************************
-@@ -736,7 +742,7 @@ FT_BEGIN_HEADER
+@@ -761,7 +767,7 @@ FT_BEGIN_HEADER
     * Define `TT_CONFIG_OPTION_BDF` if you want to include support for an
     * embedded 'BDF~' table within SFNT-based bitmap formats.
     */
@@ -179,7 +179,7 @@ index eb4e32d80..6261cf276 100644
  
  
    /**************************************************************************
-@@ -972,6 +978,7 @@ FT_BEGIN_HEADER
+@@ -997,6 +1003,7 @@ FT_BEGIN_HEADER
     */
  #ifdef TT_CONFIG_OPTION_BYTECODE_INTERPRETER
  #define  TT_USE_BYTECODE_INTERPRETER

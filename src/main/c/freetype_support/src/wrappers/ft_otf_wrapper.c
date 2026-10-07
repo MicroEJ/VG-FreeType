@@ -11,14 +11,14 @@
  */
 
 /**
-* @file
-* @brief MicroEJ Freetype wrapper on freetype c files
-* @author MicroEJ Developer Team
-* @version 5.0.1
-*/
+ * @file
+ * @brief MicroEJ Freetype wrapper on freetype c files
+ * @author MicroEJ Developer Team
+ * @version 5.0.4
+ */
 
 #include "vg_configuration.h"
-#if defined (VG_FEATURE_FONT)
+#if defined(VG_FEATURE_FONT)
 
 #if defined VG_FEATURE_FREETYPE_OTF && (VG_FEATURE_FREETYPE_OTF == 1)
 #include "../../thirdparty/freetype/src/cff/cff.c"

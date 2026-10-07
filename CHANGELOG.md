@@ -5,6 +5,39 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.0.4] - 2026-10-07
+
+### Changed
+
+- Describe in the README how to get the FreeType source and apply the patches, for an integration from the GitHub repository.
+- List in the README the boards this C Module is tested on and the MISRA deviations of its support files.
+- Regenerate `options.patch` against FreeType 2.14.1, so that `git apply` applies it with no fuzz; the patched files do not change.
+
+## [5.0.3] - 2026-10-05
+
+### Added
+
+- Preserve the drawing destination's own error when it refuses a glyph, so a failure is no longer attributed to FreeType.
+
+### Changed
+
+- Require the C Module MicroVG 8.0.3.
+- Log the FreeType heap through the log macros of the C Module MicroVG, without an empty line after each log.
+- Complete the Doxygen documentation of `ftvector.h`, and align the README with the other MicroEJ C modules.
+
+### Fixed
+
+- Trace the FreeType heap when an allocation in it fails, which failed silently.
+- Fix the CPU fault raised when loading a font on a target that requires aligned memory accesses.
+- Remove the colored emoji support when `VG_FEATURE_FREETYPE_COLORED_EMOJI` is `0`, as documented.
+- Fix the double free that a failed reallocation in the FreeType heap caused.
+
+## [5.0.2] - 2026-09-15
+
+### Changed
+
+- Enable the uncrustify and cppcheck checks on the MicroEJ source files.
+
 ## [5.0.1] - 2026-02-02
 
 ### Fixed
@@ -76,4 +109,5 @@ _This file is part of the FreeType project, and may only be used,_\
 _modified, and distributed under the terms of the FreeType project_\
 _license, LICENSE.TXT.  By continuing to use, modify, or distribute_\
 _this file you indicate that you have read the license and_\
-_understand and accept it fully._
+_understand and accept it fully._\
+_Build: 7E4D1F7C_

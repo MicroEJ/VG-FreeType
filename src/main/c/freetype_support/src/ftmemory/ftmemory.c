@@ -13,6 +13,7 @@
  * this file you indicate that you have read the license and
  * understand and accept it fully.
  *
+ * Build: 7E4D1F7C
  */
 
   /**************************************************************************
@@ -35,6 +36,8 @@
 #include "vg_helper.h"
 #include "vg_configuration.h"
 
+VG_LOG_DECLARE_MODULE()
+
   /**************************************************************************
    *
    *                      MEMORY MANAGEMENT INTERFACE
@@ -51,10 +54,11 @@
 
 BESTFIT_ALLOCATOR freetypeAllocatorInstance;
 
-static uint8_t _ft_heap[VG_FEATURE_FREETYPE_HEAP_SIZE];
+/* The allocator is 32-bit oriented: its heap must start on a word boundary. */
+static uint32_t _ft_heap[(VG_FEATURE_FREETYPE_HEAP_SIZE + 3u) / 4u];
 
-#define FT_HEAP_START   ( &_ft_heap[0] )
-#define FT_HEAP_END     ( &_ft_heap[VG_FEATURE_FREETYPE_HEAP_SIZE] )
+#define FT_HEAP_START   ( (uint8_t *)&_ft_heap[0] )
+#define FT_HEAP_END     ( FT_HEAP_START + VG_FEATURE_FREETYPE_HEAP_SIZE )
 
 #ifdef MICROVG_MONITOR_HEAP
 static uint32_t current_heap_size = 0;
@@ -89,9 +93,13 @@ static uint32_t current_heap_size = 0;
 	#ifdef MICROVG_MONITOR_HEAP
     if(NULL != ptr) {
 		current_heap_size += size;
-		MEJ_LOG_INFO_MICROVG("FT Heap - alloc -> size= %d\n", current_heap_size);
+		VG_LOG_INFO("FT Heap - alloc -> size= %d", current_heap_size);
     }
 	#endif
+
+    if (NULL == ptr) {
+        VG_LOG_ERROR("FreeType heap: cannot allocate %ld bytes", size);
+    }
 
     return ptr;
   }
@@ -136,9 +144,10 @@ static uint32_t current_heap_size = 0;
 
         if (_pNewBock != NULL) {
             memcpy(_pNewBock, block, cur_size);
+            BESTFIT_ALLOCATOR_free(&freetypeAllocatorInstance, block);
+        } else {
+            VG_LOG_ERROR("FreeType heap: cannot reallocate %ld bytes", new_size);
         }
-
-        BESTFIT_ALLOCATOR_free(&freetypeAllocatorInstance, block);
     }
 
 	#ifdef MICROVG_MONITOR_HEAP
@@ -146,7 +155,7 @@ static uint32_t current_heap_size = 0;
 		current_heap_size -= cur_size;
 		current_heap_size += new_size;
 
-		MEJ_LOG_INFO_MICROVG("FT Heap - realloc -> size= %d\n", current_heap_size);
+		VG_LOG_INFO("FT Heap - realloc -> size= %d", current_heap_size);
 	}
 	#endif
 
@@ -177,7 +186,7 @@ static uint32_t current_heap_size = 0;
 	#ifdef MICROVG_MONITOR_HEAP
     uint32_t * ptr  = (uint32_t*) block;
 	current_heap_size -= *(ptr -1) & 0x7FFFFFFF;
-	MEJ_LOG_INFO_MICROVG("FT Heap - free -> size= %d\n", current_heap_size);
+	VG_LOG_INFO("FT Heap - free -> size= %d", current_heap_size);
 	#endif
 
     BESTFIT_ALLOCATOR_free(&freetypeAllocatorInstance, block);

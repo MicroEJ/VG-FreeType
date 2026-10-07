@@ -9,13 +9,13 @@
  */
 
 /**
-* @file
-* @brief Wrapper of FreeType's aftypes.h. Useful for backward compatibility: no need to
-* update the C module MicroVG.
-*
-* @author MicroEJ Developer Team
-* @version 5.0.1
-*/
+ * @file
+ * @brief Wrapper of FreeType's aftypes.h. Useful for backward compatibility: no need to
+ * update the C module MicroVG.
+ *
+ * @author MicroEJ Developer Team
+ * @version 5.0.4
+ */
 
 // just make the indirection
 #include <autofit/aftypes.h>

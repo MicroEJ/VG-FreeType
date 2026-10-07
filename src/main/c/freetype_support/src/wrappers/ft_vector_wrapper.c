@@ -11,14 +11,15 @@
  */
 
 /**
-* @file
-* @brief MicroEJ Freetype wrapper on freetype c files
-* @author MicroEJ Developer Team
-* @version 5.0.1
-*/
+ * @file
+ * @brief MicroEJ Freetype wrapper on freetype c files
+ * @author MicroEJ Developer Team
+ * @version 5.0.4
+ */
 
 #include "vg_configuration.h"
 
-#if defined (VG_FEATURE_FONT) && defined (VG_FEATURE_FONT_FREETYPE_VECTOR) && (VG_FEATURE_FONT == VG_FEATURE_FONT_FREETYPE_VECTOR)
+#if defined(VG_FEATURE_FONT) && defined(VG_FEATURE_FONT_FREETYPE_VECTOR) && \
+	(VG_FEATURE_FONT == VG_FEATURE_FONT_FREETYPE_VECTOR)
 #include "../ftvector/ftvector.c"
-#endif // defined (VG_FEATURE_FONT) && defined (VG_FEATURE_FONT_FREETYPE_VECTOR) && (VG_FEATURE_FONT == VG_FEATURE_FONT_FREETYPE_VECTOR)
+#endif // VG_FEATURE_FONT_FREETYPE_VECTOR

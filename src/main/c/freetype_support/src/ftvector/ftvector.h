@@ -8,13 +8,15 @@
  * license, LICENSE.TXT.  By continuing to use, modify, or distribute
  * this file you indicate that you have read the license and
  * understand and accept it fully.
+ *
+ * Build: 7E4D1F7C
  */
 
 /**
  * @file
  * @brief Freetype renderer
  * @author MicroEJ Developer Team
- * @version 5.0.1
+ * @version 5.0.4
  */
 
 #ifndef FTVECTOR_H
@@ -34,20 +36,24 @@
 // Defines
 // --------------------------------------------------------------------------------
 
-#define FT_PARAM_TAG_DRAWER     FT_MAKE_TAG( 'd', 'r', 'a', 'w' )
+/**
+ * @brief The render mode tag that gives the renderer its FTVECTOR_draw_glyph_data_t.
+ */
+#define FT_PARAM_TAG_DRAWER     FT_MAKE_TAG('d', 'r', 'a', 'w')
 
 // --------------------------------------------------------------------------------
 // Typedef
 // --------------------------------------------------------------------------------
 
-/*
+/**
  * @brief The data of the function VG_FREETYPE_draw_glyph_t
  */
 typedef struct {
-	VG_FREETYPE_draw_glyph_t drawer;
-	jfloat* matrix;
-	uint32_t color;
-	void* user_data;
+	VG_FREETYPE_draw_glyph_t drawer; /**< The function that draws each glyph. */
+	jfloat *matrix; /**< The deformation to apply on the path of each glyph. */
+	uint32_t color; /**< The color to draw the glyphs with. */
+	void *user_data; /**< The custom drawer data (may be null). */
+	jint destination_error; /**< the drawer's error, or LLVG_SUCCESS while it has accepted every glyph */
 } FTVECTOR_draw_glyph_data_t;
 
 #endif // defined VG_FEATURE_FONT && (VG_FEATURE_FONT == VG_FEATURE_FONT_FREETYPE_VECTOR)
