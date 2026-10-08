@@ -19,13 +19,13 @@ This C Module is tied to the MicroEJ VG Pack: the versions it is compatible with
    - From the MicroEJ repository: install the `.cco` archive of the version the VEE Port needs, as the [installation guide](https://docs.microej.com/en/latest/VEEPortingGuide/appendix/cmodules.html) describes.
      The archive holds the FreeType source, with the patches of this C Module applied, in `bsp/thirdparty/freetype`, and the support files in `bsp/freetype_support`.
    - From GitHub: add the [GitHub repository](https://github.com/MicroEJ/VG-FreeType) to the BSP of the VEE Port as a git submodule, at the tag of the version the VEE Port needs.
-     The repository holds the support files only, in `<folder>/src/main/c/freetype_support`, where `<folder>` is the folder of the submodule.
-     Get the FreeType source at the tag `VER-2-14-1` in `<folder>/src/main/c/thirdparty/freetype`, the folder the support files expect, then apply the patches of this C Module to it:
+     The repository holds the support files in `<folder>/src/main/c/freetype_support`, where `<folder>` is the folder of the submodule, and the FreeType source as a submodule of its own in `<folder>/src/main/c/thirdparty/freetype`, the folder the support files expect.
+     Initialize that submodule, then apply the patches of this C Module to the FreeType source:
 
      ```sh
      git submodule add https://github.com/MicroEJ/VG-FreeType.git bsp/vee/port/vg/VG-FreeType
      git -C bsp/vee/port/vg/VG-FreeType checkout <version>
-     git clone --branch VER-2-14-1 https://gitlab.freedesktop.org/freetype/freetype.git bsp/vee/port/vg/VG-FreeType/src/main/c/thirdparty/freetype
+     git -C bsp/vee/port/vg/VG-FreeType submodule update --init --recursive
      git -C bsp/vee/port/vg/VG-FreeType/src/main/c/thirdparty/freetype apply ../../freetype_support/options.patch
      git -C bsp/vee/port/vg/VG-FreeType/src/main/c/thirdparty/freetype apply ../../freetype_support/psintrp.c.patch
      ```
